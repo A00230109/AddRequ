@@ -1,0 +1,38 @@
+﻿@model WebAppCalc1YoussefNAFAA.Models.Calculator
+@{
+    ViewBag.Title = "Index";
+}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <title>Calculator</title>
+    </head>
+    <body>
+        <h2>Calculator</h2>
+        @using (Html.BeginForm("/Index", "Calculator", FormMethod.Post))
+        {
+            <div class="form-group">
+                <label for="number1">Number1: </label>
+                <input type="text" name="number1" class="form-control" id="number1" value="@Model.number1" />
+            </div>
+            <div>
+                <label for="number2">Number2: </label>
+                <input type="text" name="number2" class="form-control" id="number2" value="@Model.number2" />
+            </div>
+            <hr/><br />
+            <div>
+                <label for="total">Total: </label>
+                <label id="total" name="total">@Model.total</label>
+            </div>
+            <p></p>
+            <label for="message" id="message">@Model.message</label>
+            <p></p>
+            <button type="submit" class="btn btn-default" id="add" value="add" name="calculate">+</button>
+            <button type="submit" class="btn btn-default" id="substract" value="substract" name="calculate">-</button>
+            <button type="submit" class="btn btn-default" id="multiply" value="multiply" name="calculate">*</button>
+            <button type="submit" class="btn btn-default" id="divide" value="divide" name="calculate">/</button>
+        }
+
+    </body>
+</html>
+
